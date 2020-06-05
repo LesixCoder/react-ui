@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import MouseTracker from './components/MouseTracker';
+import LikeButton from './components/LikeButton';
+import useMousePosition from './hooks/useMousePosition';
 import logo from './logo.svg';
 
 function App() {
+  const [show, setShow] = useState(true);
+  const positions = useMousePosition();
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          <button
+            onClick={() => {
+              setShow(!show);
+            }}
+          >
+            toggle tracker
+          </button>
         </p>
-        <MouseTracker />
+        {/* {show && <MouseTracker />} */}
+        <p>
+          X: {positions.x}, Y: {positions.y}
+        </p>
+        <LikeButton />
         <a
           className="App-link"
           href="https://reactjs.org"
