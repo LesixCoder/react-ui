@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import LikeButton from './components/LikeButton';
 import logo from './logo.svg';
 
 interface IShowResult {
@@ -58,7 +57,6 @@ function App() {
             </button>
           </p>
           {/* {loading ? <p>🐶读取中</p> : <img src={dogResult && dogResult.message} />} */}
-          <LikeButton />
           <a
             className="App-link"
             href="https://reactjs.org"
